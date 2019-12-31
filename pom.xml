@@ -17,6 +17,11 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+		<!-- solving error : Invalid or corrupt jarfile /app.jar -->
+      
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.deploy.skip>true</maven.deploy.skip>
 		<docker.image.prefix>hidu1998</docker.image.prefix>
 	</properties>
