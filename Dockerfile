@@ -2,7 +2,7 @@
 FROM openjdk:8-jdk-alpine
 
 # Add Maintainer Info
-# LABEL maintainer="hieutranminh1998@gmail.com"
+LABEL maintainer="hieutranminh1998@gmail.com"
 
 # Add a volume pointing to /tmp
 VOLUME /tmp
@@ -10,8 +10,11 @@ VOLUME /tmp
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
-ARG DEPENDENCY=target/dependency
-COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY ${DEPENDENCY}/META-INF /app/META-INF
-COPY ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","hello.Application"]
+# The application's jar file
+ARG JAR_FILE
+
+# Add the application's jar to the container
+ADD ${JAR_FILE} hello.jar
+
+# Run the jar file 
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/hello.jar"]
