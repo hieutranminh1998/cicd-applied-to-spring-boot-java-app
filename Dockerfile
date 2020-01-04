@@ -1,20 +1,5 @@
-# Start with a base image containing Java runtime
-FROM openjdk:8-jdk-alpine
-
-# Add Maintainer Info
-LABEL maintainer="hieutranminh1998@gmail.com"
-
-# Add a volume pointing to /tmp
+FROM dockerfile/java:oracle-java8
 VOLUME /tmp
-
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# The application's jar file
-ARG JAR_FILE
-
-# Add the application's jar to the container
-ADD ${JAR_FILE} hello.jar
-
-# Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/hello.jar"]
+ADD target/core-0.1.0-RELEASE.jar target/app.jar
+RUN bash -c 'touch target/app.jar'
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=local","target/app.jar"]
