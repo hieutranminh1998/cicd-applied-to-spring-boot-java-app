@@ -66,7 +66,7 @@
 			
 			<!-- spotify's dockerfile-maven-plugin -->
 			
-			<plugin>
+<!-- 			<plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>dockerfile-maven-plugin</artifactId>
 	            <version>1.4.9</version>
@@ -86,11 +86,11 @@
 	                <serverId>index.docker.io</serverId>
 	      		<registryUrl>https://index.docker.io:443/v1/</registryUrl>
 	            </configuration>
-        	</plugin>
+        	</plugin> -->
         	
         	<!-- maven-dependency-plugin useful for creating docker image -->
         	
-        	<plugin>
+<!--         	<plugin>
 		     
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-dependency-plugin</artifactId>
@@ -116,10 +116,10 @@
 			    </executions>
 		    
        		</plugin>
-       		
+       		 -->
        		<!-- jacoco-maven-plugin useful for Codecov -->
        		
-       		<plugin>
+<!--        		<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.7.201606060606</version>
@@ -165,7 +165,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+			 -->
 			<!-- Useful for Heroku Deployment -->
 			
 <!-- 			<plugin>
