@@ -28,7 +28,7 @@
 		
 		<!-- Instead of "fanjups", please add your Docker Hub username -->
 		
-		<docker.image.prefix>fanjups</docker.image.prefix>
+		<docker.image.prefix>hidu1998</docker.image.prefix>
 		
 		<!--Not adding artifacts to remote repository-->
 		
