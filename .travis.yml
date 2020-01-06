@@ -17,3 +17,7 @@ script:
 - cat $HOME/.m2/settings.xml
 #deploying the app on Docker
 - mvn deploy
+after_success:
+#Generating Site
+- travis_wait mvn site
+- bash <(curl -s https://codecov.io/bash)
