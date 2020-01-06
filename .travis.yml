@@ -11,7 +11,7 @@ addons:
   sonarcloud:
     organization: "hieutranminh1998"
     token:
-      secure: $SONAR_TOKEN # encrypted value of your token
+      secure: "7c9f1f41e70e5948129b7bdf5e061c69f9eb1f8f" # encrypted value of your token
  
 before_install:
 - mvn clean
